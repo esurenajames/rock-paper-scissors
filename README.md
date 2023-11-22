@@ -2,12 +2,14 @@ Rock Paper Scissors Game
 A simple Rock Paper Scissors game implemented in HTML and CSS with a touch of JavaScript for interactivity. Play against the computer and keep track of the scores!
 
 Features
-Responsive Design: Play the game seamlessly on various devices with a responsive layout.
 Score Tracking: Keep track of your score and the computer's score.
 Reset Functionality: Reset the scores with a click of a button.
 Visual Feedback: Enjoy visual feedback with button hover effects.
+
 Screenshots
-[Include screenshots or GIFs of your game here, showcasing the gameplay and interface.]
+
+![image](https://github.com/esurenajames/rock-paper-scissors/assets/84180003/b45165c9-dd50-408c-bb4b-748ad3e34924)
+
 
 Getting Started
 Clone the repository:
@@ -21,4 +23,3 @@ Play the game by choosing Rock, Paper, or Scissors.
 
 Have fun and compete against the computer!
 
-Contributing
