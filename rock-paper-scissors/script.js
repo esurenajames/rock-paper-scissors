@@ -1,4 +1,4 @@
-        let myPoints = '';
+let myPoints = '';
         let computerPoints = '';
         let computerMoveResult='';
         let result='';
@@ -39,15 +39,12 @@
             return computerMoveResult;
             return computerImg;
         }
-        
-        function rock(){
 
+        function playGame(playerMove){
             computerMove()
 
-            const randomNumber = Math.random();
-
-            img.src = 'images/rock.png'; 
-
+            if (playerMove === 'rock'){
+                img.src = 'images/rock.png'; 
                 if(computerMoveResult=== 'rock'){
                     result ='tie'
                 } else if (computerMoveResult=== 'paper'){
@@ -59,23 +56,17 @@
                     myPoints ++;
                     document.getElementById('my-points').innerHTML = myPoints;
                 }
-            
-            document.getElementById('myChoice').innerHTML = '';
-            document.getElementById('myChoice').appendChild(img);
-            document.getElementById('computerChoice').innerHTML = '';
-            document.getElementById('computerChoice').appendChild(computerImg);
-            document.getElementById('try').innerHTML = result;
-            displayResult(result);
-        }
 
-        function paper() {
+                document.getElementById('myChoice').innerHTML = '';
+                document.getElementById('myChoice').appendChild(img);
+                document.getElementById('computerChoice').innerHTML = '';
+                document.getElementById('computerChoice').appendChild(computerImg);
+                document.getElementById('try').innerHTML = result;
+                displayResult(result);
+            }
 
-            computerMove()
-        
-            const randomNumber = Math.random();
-
-            img.src = 'images/paper.png'; 
-
+            if (playerMove === 'paper'){
+                img.src = 'images/paper.png'; 
                 if(computerMoveResult=== 'rock'){
                     result ='win'
                     myPoints ++;
@@ -88,23 +79,16 @@
                     document.getElementById('computer-points').innerHTML = computerPoints;
                 }
 
-            document.getElementById('myChoice').innerHTML = '';
-            document.getElementById('myChoice').appendChild(img);
-            document.getElementById('computerChoice').innerHTML = '';
-            document.getElementById('computerChoice').appendChild(computerImg);
-            document.getElementById('try').innerHTML = result;
-            displayResult(result);
-        }
+                document.getElementById('myChoice').innerHTML = '';
+                document.getElementById('myChoice').appendChild(img);
+                document.getElementById('computerChoice').innerHTML = '';
+                document.getElementById('computerChoice').appendChild(computerImg);
+                document.getElementById('try').innerHTML = result;
+                displayResult(result);
+            }
 
-        function scissors() {
-
-            computerMove()
-
-            const randomNumber = Math.random();
-
-            img.src = 'images/scissors.png'; 
-
-
+            if (playerMove === 'scissors'){
+                img.src = 'images/scissors.png'; 
                 if(computerMoveResult=== 'rock'){
                     result ='lose'
                     computerPoints ++;
@@ -117,12 +101,14 @@
                     result ='tie'
                 }
 
-            document.getElementById('myChoice').innerHTML = '';
-            document.getElementById('myChoice').appendChild(img);
-            document.getElementById('computerChoice').innerHTML = '';
-            document.getElementById('computerChoice').appendChild(computerImg);
-            document.getElementById('try').innerHTML = result;
-            displayResult(result);
+                document.getElementById('myChoice').innerHTML = '';
+                document.getElementById('myChoice').appendChild(img);
+                document.getElementById('computerChoice').innerHTML = '';
+                document.getElementById('computerChoice').appendChild(computerImg);
+                document.getElementById('try').innerHTML = result;
+                displayResult(result);
+            }
+
         }
 
         function resetScore(){
