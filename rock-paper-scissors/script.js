@@ -1,7 +1,11 @@
- let myPoints = '';
- let computerPoints = '';
- let computerMove='';
- let result='';
+        let myPoints = '';
+        let computerPoints = '';
+        let computerMoveResult='';
+        let result='';
+        let computerImg = document.createElement('img');
+        let img = document.createElement('img');
+        img.style.width = '80px';
+        computerImg.style.width = '80px';
 
         function displayResult(result) {
             const tryElement = document.getElementById('try');
@@ -20,17 +24,20 @@
             const randomNumber = Math.random();
 
             if (randomNumber >= 0 && randomNumber < 1 / 3){
-                    return computerMove = 'rock';
-                    computerImg.src = 'images/rock.png'; 
+                computerMoveResult = 'rock';
+                computerImg.src = 'images/rock.png'; 
                 }
                 else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3){
-                    return computerMove = 'paper';
-                    computerImg.src = 'images/paper.png'; 
+                computerMoveResult = 'paper';
+                computerImg.src = 'images/paper.png'; 
                 }
                 else if (randomNumber >= 2 / 3 && randomNumber < 3 / 3){
-                    return computerMove = 'scissors';
-                    computerImg.src = 'images/scissors.png'; 
+                computerMoveResult = 'scissors';
+                computerImg.src = 'images/scissors.png'; 
                 }
+
+            return computerMoveResult;
+            return computerImg;
         }
         
         function rock(){
@@ -38,20 +45,16 @@
             computerMove()
 
             const randomNumber = Math.random();
-            let computerImg = document.createElement('img');
-            let img = document.createElement('img');
 
             img.src = 'images/rock.png'; 
-            img.style.width = '80px';
-            computerImg.style.width = '80px';
 
-                if(computerMove=== 'rock'){
+                if(computerMoveResult=== 'rock'){
                     result ='tie'
-                } else if (computerMove=== 'paper'){
+                } else if (computerMoveResult=== 'paper'){
                     result ='lose'
                     computerPoints ++;
                     document.getElementById('computer-points').innerHTML = computerPoints;
-                } else if (computerMove=== 'scissors'){
+                } else if (computerMoveResult=== 'scissors'){
                     result ='win'
                     myPoints ++;
                     document.getElementById('my-points').innerHTML = myPoints;
@@ -70,20 +73,16 @@
             computerMove()
         
             const randomNumber = Math.random();
-            let computerImg = document.createElement('img');
-            let img = document.createElement('img');
 
             img.src = 'images/paper.png'; 
-            img.style.width = '80px';
-            computerImg.style.width = '80px';
 
-                if(computerMove=== 'rock'){
+                if(computerMoveResult=== 'rock'){
                     result ='win'
                     myPoints ++;
                     document.getElementById('my-points').innerHTML = myPoints;
-                } else if (computerMove=== 'paper'){
+                } else if (computerMoveResult=== 'paper'){
                     result ='tie'
-                } else if (computerMove=== 'scissors'){
+                } else if (computerMoveResult=== 'scissors'){
                     result ='lose'
                     computerPoints ++;
                     document.getElementById('computer-points').innerHTML = computerPoints;
@@ -102,22 +101,19 @@
             computerMove()
 
             const randomNumber = Math.random();
-            let computerImg = document.createElement('img');
-            let img = document.createElement('img');
 
             img.src = 'images/scissors.png'; 
-            img.style.width = '80px';
-            computerImg.style.width = '80px';
 
-                if(computerMove=== 'rock'){
+
+                if(computerMoveResult=== 'rock'){
                     result ='lose'
                     computerPoints ++;
                     document.getElementById('computer-points').innerHTML = computerPoints;
-                } else if (computerMove=== 'paper'){
+                } else if (computerMoveResult=== 'paper'){
                     result ='win'
                     myPoints ++;
                     document.getElementById('my-points').innerHTML = myPoints;
-                } else if (computerMove=== 'scissors'){
+                } else if (computerMoveResult=== 'scissors'){
                     result ='tie'
                 }
 
