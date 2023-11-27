@@ -55,10 +55,6 @@
                 } else if (computerMoveResult=== 'scissors'){
                     result ='win'
                 }
-                document.getElementById('myChoice').innerHTML = '';
-                document.getElementById('myChoice').appendChild(img);
-                document.getElementById('computerChoice').innerHTML = '';
-                document.getElementById('computerChoice').appendChild(computerImg);
             }
 
             if (playerMove === 'paper'){
@@ -70,10 +66,6 @@
                 } else if (computerMoveResult=== 'scissors'){
                     result ='lose'
                 }
-                document.getElementById('myChoice').innerHTML = '';
-                document.getElementById('myChoice').appendChild(img);
-                document.getElementById('computerChoice').innerHTML = '';
-                document.getElementById('computerChoice').appendChild(computerImg);
             }
 
             if (playerMove === 'scissors'){
@@ -85,10 +77,6 @@
                 } else if (computerMoveResult=== 'scissors'){
                     result ='tie'
                 }
-                document.getElementById('myChoice').innerHTML = '';
-                document.getElementById('myChoice').appendChild(img);
-                document.getElementById('computerChoice').innerHTML = '';
-                document.getElementById('computerChoice').appendChild(computerImg);
             }
 
             if (result === 'win'){
@@ -102,6 +90,10 @@
             }
                 document.getElementById('try').innerHTML = result;
                 displayResult(result);
+                document.getElementById('myChoice').innerHTML = '';
+                document.getElementById('myChoice').appendChild(img);
+                document.getElementById('computerChoice').innerHTML = '';
+                document.getElementById('computerChoice').appendChild(computerImg);
         }
 
         function resetScore(){
