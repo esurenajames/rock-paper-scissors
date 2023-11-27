@@ -1,5 +1,8 @@
-let myPoints = '';
-        let computerPoints = '';
+        const score = {
+            playerScore: 0,
+            computerScore: 0
+        };
+
         let computerMoveResult='';
         let result='';
         let computerImg = document.createElement('img');
@@ -49,12 +52,12 @@ let myPoints = '';
                     result ='tie'
                 } else if (computerMoveResult=== 'paper'){
                     result ='lose'
-                    computerPoints ++;
-                    document.getElementById('computer-points').innerHTML = computerPoints;
+                    score.computerScore ++;
+                    document.getElementById('computer-points').innerHTML = score.computerScore;
                 } else if (computerMoveResult=== 'scissors'){
                     result ='win'
-                    myPoints ++;
-                    document.getElementById('my-points').innerHTML = myPoints;
+                    score.playerScore ++;
+                    document.getElementById('my-points').innerHTML = score.playerScore;
                 }
 
                 document.getElementById('myChoice').innerHTML = '';
@@ -69,14 +72,14 @@ let myPoints = '';
                 img.src = 'images/paper.png'; 
                 if(computerMoveResult=== 'rock'){
                     result ='win'
-                    myPoints ++;
-                    document.getElementById('my-points').innerHTML = myPoints;
+                    score.playerScore ++;
+                    document.getElementById('my-points').innerHTML = score.playerScore;
                 } else if (computerMoveResult=== 'paper'){
                     result ='tie'
                 } else if (computerMoveResult=== 'scissors'){
                     result ='lose'
-                    computerPoints ++;
-                    document.getElementById('computer-points').innerHTML = computerPoints;
+                    score.computerScore ++;
+                    document.getElementById('computer-points').innerHTML = score.computerScore;
                 }
 
                 document.getElementById('myChoice').innerHTML = '';
@@ -91,12 +94,12 @@ let myPoints = '';
                 img.src = 'images/scissors.png'; 
                 if(computerMoveResult=== 'rock'){
                     result ='lose'
-                    computerPoints ++;
-                    document.getElementById('computer-points').innerHTML = computerPoints;
+                    score.computerScore ++;
+                    document.getElementById('computer-points').innerHTML = score.computerScore;
                 } else if (computerMoveResult=== 'paper'){
                     result ='win'
-                    myPoints ++;
-                    document.getElementById('my-points').innerHTML = myPoints;
+                    score.playerScore ++;
+                    document.getElementById('my-points').innerHTML = score.playerScore;
                 } else if (computerMoveResult=== 'scissors'){
                     result ='tie'
                 }
@@ -112,10 +115,10 @@ let myPoints = '';
         }
 
         function resetScore(){
-            myPoints = '0';
-            computerPoints = '0';
-            document.getElementById('my-points').innerHTML = myPoints;
-            document.getElementById('computer-points').innerHTML = computerPoints;
+            score.computerScore= 0;
+            score.playerScore = 0;
+            document.getElementById('my-points').innerHTML = score.computerScore;
+            document.getElementById('computer-points').innerHTML = score.playerScore;
             document.getElementById('computerChoice').innerHTML = 'Computer';
             document.getElementById('myChoice').innerHTML = 'Player';
             document.getElementById('try').innerHTML = '';
